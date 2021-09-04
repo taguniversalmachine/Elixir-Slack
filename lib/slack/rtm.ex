@@ -13,7 +13,7 @@ defmodule Slack.Rtm do
 
   def start(token) do
     with url <- slack_url(token),
-         headers <- [{"Auhthorization", token}],
+         headers <- [{"Authorization", token}],
          options <- Application.get_env(:slack, :web_http_client_opts, []) do
       url
       |> HTTPoison.get(headers, options)
